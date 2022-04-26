@@ -1,4 +1,4 @@
-const User = require('../models/User');
+import User from '../models/User.js';
 
 class UserController {
   /**
@@ -92,4 +92,4 @@ class UserController {
   }
 }
 
-module.exports = UserController;
+export default UserController;

@@ -1,15 +1,20 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const dbConnect = require('./config/dbConfig');
-const UserRouter = require('./routes/UserRoutes');
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import morgan from 'morgan';
+import connectDb from './config/dbConfig.js';
+import UserRouter from './routes/UserRoutes.js';
 
-dbConnect();
-
+connectDb();
 const app = express();
 const PORT = 5000;
 
 app.use(bodyParser.json());
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use(cors());
 
 app.use('/api/v1/users', UserRouter);
@@ -23,4 +28,4 @@ app
     console.log(`An error occur when listening to port: ${PORT}`);
   });
 
-module.exports = app;
+export default app;
