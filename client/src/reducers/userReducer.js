@@ -4,7 +4,7 @@ import {
   USER_LIST_FAIL,
 } from '../constants/userConstants';
 
-const initialState = {
+export const initialState = {
   users: [],
   loading: false,
   error: [],

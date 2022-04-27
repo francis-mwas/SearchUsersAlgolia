@@ -1,7 +1,7 @@
 import {
-  userStateContext,
-  userStateDispatch,
+  UserStateContext,
+  UserStateDispatch,
   UserContextProvider,
 } from './userContext';
 
-export { userStateContext, userStateDispatch, UserContextProvider };
+export { UserStateContext, UserStateDispatch, UserContextProvider };
